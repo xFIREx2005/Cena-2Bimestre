@@ -23,16 +23,16 @@ public class Mover : MonoBehaviour
 	void Update()
 
 	{
-		if (Input.GetKey(KeyCode.Q))
+		if (Input.GetKey(KeyCode.Space))
 		{
-			m.y = 0.1f;
+			m.y = 0.05f;
 			Movimento(m);
 			LogMessage("cima");
 			m.y = 0.0f;
 		}
 		if (Input.GetKey(KeyCode.W))
 		{
-			m.x = 0.1f;
+			m.x = 0.05f;
 			Movimento(m);
 			LogMessage("frente");
 			m.x = 0.0f;
@@ -40,7 +40,7 @@ public class Mover : MonoBehaviour
 		if (Input.GetKey(KeyCode.S))
 		{
 
-			m.x = -0.1f;
+			m.x = -0.05f;
 			Movimento(m);
 			LogMessage("atras");
 			m.x = 0.0f;
@@ -48,14 +48,14 @@ public class Mover : MonoBehaviour
 		}
 		if (Input.GetKey(KeyCode.D))
 		{
-			m.z = -0.1f;
+			m.z = -0.05f;
 			Movimento(m);
 			LogMessage("direita");
 			m.z = 0.0f;
 		}
 		if (Input.GetKey(KeyCode.A))
 		{
-			m.z = 0.1f;
+			m.z = 0.05f;
 			Movimento(m);
 			LogMessage("esquerda");
 			m.z = 0f;

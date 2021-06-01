@@ -4,54 +4,36 @@ using UnityEngine;
 
 public class Rotacao : MonoBehaviour
 {
-	bool isLeftButtonDown;
-	bool isRightButtonDown;
-	bool isMiddleButtonDown;
-	Vector3 m;
-	// Start is called before the first frame update
-	void Start()
-	{
-		isLeftButtonDown = false;
-		isRightButtonDown = false;
-		isMiddleButtonDown = false;
-		m.x = 0.0f;
-		m.y = 0.0f;
-		m.z = 0.0f;
-	}
 
-	// Update is called once per frame
-	void Update()
+    //instancia a classe Vector que possibilita manipular as dimensões
+    public Vector3 m;
+    // Start é chamado antes da atualização do primeiro frame
+    void Start()
+    {
+        m.y = 0.0f;
+    }
+    // Update é chamado a cada atualização de frame
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            m.y = 1f;
+            Escala(m);
+            m.y = 1f;
+        }
 
-	{
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            m.y = -1f;
+            Escala(m);
+            m.y = -1f;
+        }
 
-		isLeftButtonDown = Input.GetMouseButtonDown(0);
-		isRightButtonDown = Input.GetMouseButtonDown(1);
-		isMiddleButtonDown = Input.GetMouseButtonDown(2);
-		
-		if (isLeftButtonDown)
-		{
-			m.x = -30f;
-			Rodar(m);
-			isLeftButtonDown = false;
-		}
+    }
+    void Escala(Vector3 m)
+    {
+        transform.Rotate(m);
 
-		if (isRightButtonDown)
-		{
-			m.x = 30f;
-			Rodar(m);
-			isLeftButtonDown = false;
-		}
-
-
-
-
-
-
-	}
-
-	void Rodar(Vector3 x)
-	{
-		transform.Rotate(x);
-	}
+    }
 
 }

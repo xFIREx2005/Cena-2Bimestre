@@ -20,7 +20,7 @@ public class Scale : MonoBehaviour
     // Update é chamado a cada atualização de frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.P))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             float x = 0.01f;
             float y = 0.01f;
@@ -29,7 +29,7 @@ public class Scale : MonoBehaviour
             Escala();
         }
 
-        if (Input.GetKey(KeyCode.O))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             float x = -0.01f;
             float y = -0.01f;
