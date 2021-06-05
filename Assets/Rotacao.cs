@@ -17,14 +17,14 @@ public class Rotacao : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            m.y = 1f;
+            m.y = 2.5f;
             Escala(m);
             m.y = 1f;
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            m.y = -1f;
+            m.y = -2.5f;
             Escala(m);
             m.y = -1f;
         }

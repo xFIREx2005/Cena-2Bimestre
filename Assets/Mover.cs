@@ -25,14 +25,14 @@ public class Mover : MonoBehaviour
 	{
 		if (Input.GetKey(KeyCode.Space))
 		{
-			m.y = 0.05f;
+			m.y = 0.08f;
 			Movimento(m);
 			LogMessage("cima");
 			m.y = 0.0f;
 		}
 		if (Input.GetKey(KeyCode.W))
 		{
-			m.x = 0.05f;
+			m.x = 0.08f;
 			Movimento(m);
 			LogMessage("frente");
 			m.x = 0.0f;
@@ -40,7 +40,7 @@ public class Mover : MonoBehaviour
 		if (Input.GetKey(KeyCode.S))
 		{
 
-			m.x = -0.05f;
+			m.x = -0.08f;
 			Movimento(m);
 			LogMessage("atras");
 			m.x = 0.0f;

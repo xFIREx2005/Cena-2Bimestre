@@ -18,7 +18,7 @@ public class GameOver : MonoBehaviour
 
     void OnCollisionEnter(Collision Colider)
     {
-        if (Colider.gameObject.tag == "Finish")
+        if (Colider.gameObject.tag == "Respawn")
         {
             Application.LoadLevel(Application.loadedLevel);
         }
