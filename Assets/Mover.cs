@@ -4,45 +4,41 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-	bool isLeftButtonDown;
-	bool isRightButtonDown;
-	bool isMiddleButtonDown;
+	public Rigidbody PlayerRigidbody;
 	Vector3 m;
 	// Start is called before the first frame update
 	void Start()
 	{
-		isLeftButtonDown = false;
-		isRightButtonDown = false;
-		isMiddleButtonDown = false;
-		m.x = 0.0f;
-		m.y = 0.0f;
-		m.z = 0.0f;
+		
 	}
 
 	// Update is called once per frame
 	void Update()
+    {
+        Teclas();
+    }
 
+	void Teclas()
 	{
 		if (Input.GetKey(KeyCode.Space))
 		{
-			m.y = 0.08f;
-			Movimento(m);
-			LogMessage("cima");
+			if(transform.position.y<=4){
+			m.y = 0.2f;
+			Movimento(m);			
 			m.y = 0.0f;
+			}
 		}
 		if (Input.GetKey(KeyCode.W))
 		{
 			m.x = 0.08f;
-			Movimento(m);
-			LogMessage("frente");
+			Movimento(m);		
 			m.x = 0.0f;
 		}
 		if (Input.GetKey(KeyCode.S))
 		{
 
 			m.x = -0.08f;
-			Movimento(m);
-			LogMessage("atras");
+			Movimento(m);	
 			m.x = 0.0f;
 
 		}
@@ -50,29 +46,23 @@ public class Mover : MonoBehaviour
 		{
 			m.z = -0.05f;
 			Movimento(m);
-			LogMessage("direita");
 			m.z = 0.0f;
 		}
 		if (Input.GetKey(KeyCode.A))
 		{
 			m.z = 0.05f;
 			Movimento(m);
-			LogMessage("esquerda");
 			m.z = 0f;
 		}
 		
 
 	}
-
 	void Movimento(Vector3 m)
 	{
 		transform.Translate(m);
-
 	}
+		
+	
 
-	void LogMessage(string msg)
-	{
-
-		Debug.Log("A opção selecionada foi " + msg.ToUpper());
-	}
+	
 }

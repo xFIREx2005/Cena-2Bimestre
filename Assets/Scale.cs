@@ -20,32 +20,38 @@ public class Scale : MonoBehaviour
     // Update é chamado a cada atualização de frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
+        if (transform.localScale.y <= 2.5f)
+         if (Input.GetKey(KeyCode.UpArrow)) 
+         Aumentar();
+
+        if (transform.localScale.y >= 0.2f)
+        if (Input.GetKey(KeyCode.DownArrow))
+        Diminuir();
+
+    }
+
+    void Aumentar()
+    {
             float x = 0.01f;
             float y = 0.01f;
             float z = 0.01f;
             scaleChange.Set(x, y, z);
             Escala();
-        }
+    }
 
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            float x = -0.01f;
-            float y = -0.01f;
-            float z = -0.01f;
-            scaleChange.Set(x, y, z);
-            Escala();
-        }
-
+    void Diminuir()
+    {
+        float x = -0.01f;
+        float y = -0.01f;
+        float z = -0.01f;
+        scaleChange.Set(x, y, z);
+        Escala();
     }
 
     void Escala()
-    {
-      
-            transform.localScale += scaleChange;
-      
-
+    { 
+            transform.localScale += scaleChange;  
+            print(transform.localScale);
     }
 
 }
