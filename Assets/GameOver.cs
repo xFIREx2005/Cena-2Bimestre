@@ -22,5 +22,10 @@ public class GameOver : MonoBehaviour
         {
             Application.LoadLevel(Application.loadedLevel);
         }
+
+         if (Colider.gameObject.tag == "Finish")
+        {
+                Application.LoadLevel(Application.loadedLevel);  
+        }
     }
 }

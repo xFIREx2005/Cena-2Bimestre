@@ -4,18 +4,9 @@ using UnityEngine;
 
 public class Scale : MonoBehaviour
 {
-    //instancia a classe Vector que possibilita manipular as dimensões
     public Vector3 scaleChange;
-
-
-
-
-
-    // Start é chamado antes da atualização do primeiro frame
-    void Start()
-    {
-      
-    }
+    Player player = new Player(0.08f, 0.2f,2.5f,0.01f); 
+ 
 
     // Update é chamado a cada atualização de frame
     void Update()
@@ -32,18 +23,18 @@ public class Scale : MonoBehaviour
 
     void Aumentar()
     {
-            float x = 0.01f;
-            float y = 0.01f;
-            float z = 0.01f;
-            scaleChange.Set(x, y, z);
-            Escala();
+        float x = player.escala;
+        float y = player.escala;
+        float z = player.escala;
+        scaleChange.Set(x, y, z);
+        Escala();
     }
 
     void Diminuir()
     {
-        float x = -0.01f;
-        float y = -0.01f;
-        float z = -0.01f;
+        float x = -player.escala;
+        float y = -player.escala;
+        float z = -player.escala;
         scaleChange.Set(x, y, z);
         Escala();
     }
@@ -51,7 +42,6 @@ public class Scale : MonoBehaviour
     void Escala()
     { 
             transform.localScale += scaleChange;  
-            print(transform.localScale);
     }
 
 }

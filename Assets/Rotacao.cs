@@ -4,27 +4,21 @@ using UnityEngine;
 
 public class Rotacao : MonoBehaviour
 {
-
-    //instancia a classe Vector que possibilita manipular as dimensões
     public Vector3 m;
-    // Start é chamado antes da atualização do primeiro frame
-    void Start()
-    {
-        m.y = 0.0f;
-    }
-    // Update é chamado a cada atualização de frame
+    Player player = new Player(0.08f, 0.2f,2.5f,0.01f);
+    
     void Update()
     {
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            m.y = 2.5f;
+            m.y = player.rotacao;
             Escala(m);
             m.y = 1f;
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            m.y = -2.5f;
+            m.y = -player.rotacao;
             Escala(m);
             m.y = -1f;
         }
