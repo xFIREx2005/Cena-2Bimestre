@@ -5,7 +5,7 @@ using UnityEngine;
 public class Rotacao : MonoBehaviour
 {
     public Vector3 m;
-    Player player = new Player(0.08f, 0.2f,2.5f,0.01f);
+    Player player = new Player(0, 0,1,0);
     
     void Update()
     {

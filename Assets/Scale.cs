@@ -5,7 +5,7 @@ using UnityEngine;
 public class Scale : MonoBehaviour
 {
     public Vector3 scaleChange;
-    Player player = new Player(0.08f, 0.2f,2.5f,0.01f); 
+    Player player = new Player(0, 0,0,0.01f); 
  
 
     // Update é chamado a cada atualização de frame

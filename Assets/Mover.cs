@@ -6,7 +6,7 @@ public class Mover : MonoBehaviour
 {
 	Vector3 m;
 
-	Player player = new Player(0.08f, 0.2f,2.5f,0.01f);
+	Player player = new Player(0.025f, 0.05f,0,0);
 
 	void Update()
     {
